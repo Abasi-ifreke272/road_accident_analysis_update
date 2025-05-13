@@ -173,7 +173,7 @@ selected_regions = []
 selected_severities = []
 selected_months = []
 
-if df_collision is not None and df_merged_with_casualty_info is not None: #changed df_merged
+if df_collision is not None: #changed df_merged
     try:
         junction_type_labels = {0: "Not at junction", 1: "Roundabout", 2: "Mini-roundabout", 3: "T or staggered junction", 5: "Slip road", 6: "Crossroads", 7: "More than 4 arms (not roundabout)", 8: "Private drive or entrance", 9: "Other junction"}
         available_junctions_raw = sorted(df_collision['junction_detail'].dropna().unique())
