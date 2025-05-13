@@ -61,14 +61,15 @@ def accident_severity_prediction_tab(df_merged):
             )
             # updated model in new_folder
             try:
-                rf_model = joblib.load('compressed_rf_model.joblib.gz') # this is a new update after deleting the dev center
+                rf_model = joblib.load('compressed_rf_model.joblib.gz')  # Ensure this is the correct file for RF model
                 nn_model = joblib.load('comp_nnbest_nn_model.joblib.gz')
+                print(f"Random Forest model type: {type(rf_model)}")
+                print(f"NN model type: {type(nn_model)}")
             except Exception as model_error:
                 st.error(f"⚠️ Could not load model: {model_error}")
                 print("Error loading models")
-            # rf_model = joblib.load('comp_rfbest_rf_model.joblib.gz')# updated models now
-            # nn_model = joblib.load('comp_nnbest_nn_model.joblib.gz')
 
+            
             rf_y_pred = rf_model.predict(X_test)
             nn_y_pred = nn_model.predict(X_test)
 
