@@ -60,7 +60,7 @@ def accident_severity_prediction_tab(df_merged):
                 X, y, test_size=0.2, random_state=42, stratify=y
             )
 
-            rf_model = joblib.load('comp_rfbest_rf_model.joblib.gz')
+            rf_model = joblib.load('comp_rfbest_rf_model.joblib.gz')# updated models now
             nn_model = joblib.load('comp_nnbest_nn_model.joblib.gz')
 
             rf_y_pred = rf_model.predict(X_test)
