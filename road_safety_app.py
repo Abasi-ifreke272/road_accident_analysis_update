@@ -59,9 +59,9 @@ def accident_severity_prediction_tab(df_merged):
             X_train, X_test, y_train, y_test = train_test_split(
                 X, y, test_size=0.2, random_state=42, stratify=y
             )
-
+            # update in new_folder
             try:
-                rf_model = joblib.load('comp_rfbest_rf_model.joblib.gz')
+                rf_model = joblib.load('comp_rfbest_rf_model.joblib.gz') # this is a new update after deleting the dev center
                 nn_model = joblib.load('comp_nnbest_nn_model.joblib.gz')
             except Exception as model_error:
                 st.error(f"⚠️ Could not load model: {model_error}")
